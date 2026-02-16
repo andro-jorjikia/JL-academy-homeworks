@@ -1,82 +1,249 @@
 * {
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
-  background: #f5f7fb;
-  padding: 40px;
+  background: #f3f5fa;
+  padding: 60px;
 }
+
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .row {
   display: flex;
-  gap: 12px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
-/* Base button */
+
 .btn {
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 12px;
+  padding: 11px 22px;
+  font-size: 13px;
   font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-/* Colors */
-.primary { background: #3b82f6; color: white; }
-.warning { background: #ef4444; color: white; }
-.success { background: #22c55e; color: white; }
-.attention { background: #f59e0b; color: white; }
-.action { background: #e0e7ff; color: #1e40af; }
-
-/* Variants */
-.smooth {
-  opacity: 0.85;
+.btn:hover {
+  transform: translateY(-3px);
 }
 
-.ghost {
-  background: transparent;
-  border: 1px solid currentColor;
-  color: inherit;
+.btn:active {
+  transform: translateY(1px);
 }
 
-.raised {
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
 
-/* Icon buttons */
-.icon {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Circle buttons */
-.circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
+.primary {
   background: #3b82f6;
   color: white;
 }
 
-.circle.smooth { opacity: 0.85; }
-.circle.ghost {
+.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.success {
+  background: #22c55e;
+  color: white;
+}
+
+.attention {
+  background: #f59e0b;
+  color: white;
+}
+
+
+.smooth {
+  opacity: 0.8;
+}
+.smooth:hover {
+  opacity: 1;
+}
+
+
+.ghost {
+  background: transparent;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.btn.primary.ghost {
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn.danger.ghost {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.btn.success.ghost {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+.btn.attention.ghost {
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.ghost:hover {
+  background: currentColor;
+  color: white;
+  animation: ghostFadeScale 0.35s;
+}
+
+@keyframes ghostFadeScale {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.raised {
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+.raised:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+}
+
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.action {
+  background: #3b82f6;
+  color: white;
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(59,130,246, 0.4);
+}
+
+.action.light {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.action.outline {
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.action:hover {
+  box-shadow: 0 14px 28px rgba(59,130,246, 0.6);
+}
+
+
+.square {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.square.light {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.square.outline {
   background: transparent;
   border: 1px solid #cbd5e1;
   color: #475569;
 }
+
+.square.raised {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.square:hover {
+  transform: translateY(-4px);
+}
+
+.square:active {
+  transform: translateY(1px);
+}
+
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.circle.light {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.circle.outline {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+}
+
 .circle.raised {
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.circle:hover {
+  transform: translateY(-4px);
+}
+
+.circle:active {
+  transform: translateY(1px);
 }
